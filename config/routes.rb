@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   resources :users
   root to: 'static_pages#home'
 
-  get "signup", to: "users#new", as: "signup"
-  get "login", to: "sessions#new", as: "login"
-  get "logout", to: "sessions#destroy", as: "logout"
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
 
   match '/about',   to: 'static_pages#about',   via: 'get'
-  get 'game/update'
+  match '/update_game', to: 'games#update', via: 'get'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
