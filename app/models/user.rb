@@ -8,4 +8,18 @@ class User < ApplicationRecord
   validates :steamid, presence: true
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }, presence: true
+
+  def self.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def self.digest(token)
+    Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  private
+
+  def create_token
+    self.remember_token = User.digest(User.new_token)
+  end
 end
