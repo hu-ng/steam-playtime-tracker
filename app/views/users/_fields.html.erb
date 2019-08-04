@@ -1,14 +1,13 @@
 <%= render 'shared/error_messages', object: f.object%>
 
-<%= f.label :email %><br>
-<%= f.text_field :email %><br>
+<%= f.label :email %><span class="required">*</span>
+<%= f.text_field :email %>
 
-<%= f.label :steamid, "Steam ID" %><br>
+<%= f.label :steamid, "Steam ID" %><span class="required">*</span>
+<%= f.text_field :steamid %>
 
-<%= f.text_field :steamid %><br>
+<%= f.label :password %><span class="required">*</span>
+<%= f.password_field :password %>
 
-<%= f.label :password %><br>
-<%= f.password_field :password %><br>
-
-<%= f.label :password_confirmation, "Confirm Password" %><br>
-<%= f.password_field :password_confirmation %><br>
+<%= f.label :password_confirmation, "Confirm Password" %><span class="required">*</span>
+<%= f.password_field :password_confirmation %>
