@@ -1,0 +1,13 @@
+<%= render 'shared/error_messages', object: f.object%>
+
+<%= f.label :threshold, "Time limit (in hours)" %><span class="required">*</span>
+<%= f.number_field :threshold %>
+
+<%= f.label :days %><span class="required">*</span>
+<%= f.number_field :days %>
+
+<%= f.label :weeks %><span class="required">*</span>
+<%= f.number_field :weeks %>
+
+<%= f.label :months %><span class="required">*</span>
+<%= f.number_field :months %>

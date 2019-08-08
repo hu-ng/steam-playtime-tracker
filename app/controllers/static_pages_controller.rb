@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_action :sign_in_user
+  before_action :signed_in_user, only: :home
 
   def home
     @games = Game.get_all_for_user(current_user.id)
@@ -8,11 +8,4 @@ class StaticPagesController < ApplicationController
   def about
   end
 
-  private
-
-  def sign_in_user
-    if !signed_in?
-      redirect_to login_path
-    end
-  end
 end

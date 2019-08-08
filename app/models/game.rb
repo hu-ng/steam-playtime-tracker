@@ -1,6 +1,7 @@
 class Game < ApplicationRecord
   belongs_to :metagame
   belongs_to :user
+  has_one :tracker
 
   validates :playtime, presence: true
 

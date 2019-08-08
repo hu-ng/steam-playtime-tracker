@@ -2,6 +2,7 @@ class Tracker < ApplicationRecord
   belongs_to :game
 
   validates :threshold, presence: true
+  validates :base_playtime, presence: true
   validate :validate_days_weeks_months
 
   def validate_days_weeks_months

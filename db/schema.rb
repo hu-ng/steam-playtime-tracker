@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_08_03_143334) do
     t.integer "days"
     t.integer "weeks"
     t.integer "months"
+    t.integer "base_playtime"
     t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

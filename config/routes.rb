@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
+  resources :games do
+    resources :trackers
+  end
   root to: 'static_pages#home'
 
   get 'signup', to: 'users#new', as: 'signup'

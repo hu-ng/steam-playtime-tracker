@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }, presence: true
 
+  # validate correct steam id using api
+
   def self.new_token
     SecureRandom.urlsafe_base64
   end

@@ -5,13 +5,11 @@
 <table>
   <tr>
     <th>Game Name</th>
-    <th>AppID</th>
     <th>Total playtime</th>
   </tr>
   <% @games.each do |game| %>
     <tr>
       <td><%= game.metagame.name %></td>
-      <td><%= game.metagame.appid %></td>
       <td><%= game.playtime %></td>
     </tr>
   <% end %>

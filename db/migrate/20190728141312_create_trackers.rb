@@ -5,6 +5,7 @@ class CreateTrackers < ActiveRecord::Migration[5.2]
       t.integer :days
       t.integer :weeks
       t.integer :months
+      t.integer :base_playtime
       t.references :game, foreign_key: true
 
       t.timestamps
