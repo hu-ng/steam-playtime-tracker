@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_03_143334) do
+ActiveRecord::Schema.define(version: 2019_08_09_141225) do
 
   create_table "games", force: :cascade do |t|
     t.float "playtime"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_08_03_143334) do
     t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "playtime", default: 0.0
     t.index ["game_id"], name: "index_trackers_on_game_id"
   end
 

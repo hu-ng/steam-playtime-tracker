@@ -1,2 +1,21 @@
-<h1>Trackers#index</h1>
-<p>Find me in app/views/trackers/index.html.erb</p>
+<% provide(:title, 'Lists of trackers') %>
+
+<table>
+  <tr>
+    <th>Tracker for</th>
+    <th>Limit</th>
+    <th>From</th>
+    <th>Until</th>
+    <th>Current Playtime</th>
+  </tr>
+  <% @trackers.each do |tracker| %>
+    <tr>
+      <td><%= tracker.game.metagame.name %></td>
+      <td><%= tracker.threshold %></td>
+      <td><%= tracker.created_at.strftime("%Y-%m-%d") %></td>
+      <td><%= tracker.until %></td>
+      <td><%= tracker.playtime %></td>
+      <td><%= link_to "Delete", game_tracker_path(tracker.game, tracker), method: :delete %></td>
+    </tr>
+  <% end %>
+</table>

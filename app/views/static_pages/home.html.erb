@@ -5,12 +5,18 @@
 <table>
   <tr>
     <th>Game Name</th>
-    <th>Total playtime</th>
+    <th>Total Playtime</th>
+    <th>Tracker Status</th>
   </tr>
   <% @games.each do |game| %>
     <tr>
       <td><%= game.metagame.name %></td>
       <td><%= game.playtime %></td>
+      <% if game.tracker.present?%>
+        <td><%= link_to "View tracker", trackers_path %></td>
+      <% else %>
+        <td><%= link_to "Create tracker", new_game_tracker_path(game) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
