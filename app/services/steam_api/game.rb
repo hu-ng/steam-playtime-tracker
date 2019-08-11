@@ -8,6 +8,12 @@ module SteamAPI
       [ games, response[:errors] ]
     end
 
+    def self.get_recently_played_games
+      response = Request.get_json('IPlayerService/GetRecentlyPlayedGames/v1/')
+      games = response['response']['games'].map { |game| Game.new(game) }
+      [ games, response[:errors] ]
+    end
+
     def initialize(args = {})
       super(args)
     end
