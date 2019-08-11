@@ -16,6 +16,7 @@
       <td><%= tracker.until %></td>
       <td><%= tracker.playtime %></td>
       <td><%= link_to "Delete", game_tracker_path(tracker.game, tracker), method: :delete %></td>
+      <td><%= link_to "Edit", edit_game_tracker_path(tracker.game, tracker) %></td>
     </tr>
   <% end %>
 </table>

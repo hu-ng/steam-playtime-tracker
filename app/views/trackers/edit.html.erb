@@ -3,7 +3,6 @@
 
 <div class="row">
   <div class="span6">
-    <%binding.pry%>
     <%= form_for [@game, @tracker] do |f| %>
       <%= render 'fields', f: f %>
       <div><%= f.hidden_field :game_id, value: params[:game_id] %></div>
