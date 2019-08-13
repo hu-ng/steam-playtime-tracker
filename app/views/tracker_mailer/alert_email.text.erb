@@ -1,7 +1,7 @@
-Notification from SteamTracker, <%= @user.email %>
+Notification from SteamTracker, <%= @tracker.game.user.email %>
 ==================================================
 
-You have exceeded your set limit for the game <%= @game.metagame.name %>
+You have exceeded your set limit for the game <%= @tracker.game.metagame.name %>
 
-Your limit: <%= @game.tracker.threshold %>
-Your playtime: <%= @game.tracker.playtime %>
+Your limit: <%= @tracker.threshold %>
+Your playtime: <%= @tracker.playtime %>

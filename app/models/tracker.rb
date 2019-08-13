@@ -15,4 +15,24 @@ class Tracker < ApplicationRecord
     self.created_at = self.created_at + self.months.months if self.months.present?
     self.created_at.strftime("%Y-%m-%d")
   end
+
+  def self.check_status_trackers
+    Tracker.all.each do |tracker|
+      if tracker.until < Time.now
+        TrackerMailer.expired_mail(tracker).deliver_now
+        tracker.destroy
+        p "Tracker expired"
+      end
+    end
+  end
+
+  def self.update_tracker game
+    tracker = game.tracker
+    tracker.playtime = game.playtime - tracker.base_playtime
+    tracker.save
+    if tracker.playtime > tracker.threshold
+      TrackerMailer.alert_email(tracker).deliver_now
+    end
+  end
+
 end

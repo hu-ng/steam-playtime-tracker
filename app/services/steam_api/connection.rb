@@ -4,9 +4,9 @@ module SteamAPI
   class Connection
     BASE = 'https://api.steampowered.com/'
 
-    def self.api
+    def self.api user
       Faraday.new url: BASE,
-        params: {steamid: ENV['MY_USER_ID'],
+        params: {steamid: user.steamid,
                  key: ENV['STEAM_API_KEY']}
     end
   end
