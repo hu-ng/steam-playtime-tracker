@@ -9,6 +9,6 @@ To run the app in a local server after cloning the repo:
 4. Run `whenever --update-crontab` to start scheduling API calls to Steam
 5. Finally, do `rails s` to start the local server
 
-## TODO:
+## TODO
 - UI improvements much needed
 - Deploy to Heroku with scheduler configured. Will need to refactor to accept user's own API key.
