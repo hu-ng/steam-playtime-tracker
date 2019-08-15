@@ -1,5 +1,5 @@
 # Steam Playtime Tracker
-An app that let's you put a tracker on the playing time of any game and send email notifications accordingly. Relies on the Steam Web API to work.
+An app that let's you put a tracker on the playing time of any game and send email notifications accordingly. Relies on the [Steam Web API](https://partner.steamgames.com/doc/home) to work.
 
 ## Setting up
 To run the app in a local server after cloning the repo:
